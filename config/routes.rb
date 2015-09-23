@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'shouts/index'
+
+  get 'shouts/show'
+
+  get 'shouts/create'
+
+  get 'shouts/update'
+
+  get 'shouts/destroy'
+
   get 'users/index'
 
   get 'users/show'
