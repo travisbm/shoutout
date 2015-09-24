@@ -1,7 +1,20 @@
-<h2>Shouts</h2>
+<% if shouts.count < 25 %>
 
-<ul>
-  <% shouts.each do |shout| %>
-   <li><%= shout.message %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% shouts.each do |shout| %>
+     <li><%= shout.message %></li>
+    <% end %>
+  </ul>
+
+<%elsif%>
+
+  <ul>
+    <% shouts.each do |shout| %>
+     <li><a href = '/users/<%= shout.user_id %>'><%= shout.message %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to('< Prev Page', root_path(page: page - 1, limit: limit)) %>
+  <%= link_to('More Page >', root_path(page: page + 1, limit: limit)) %>
+
+<%end%>

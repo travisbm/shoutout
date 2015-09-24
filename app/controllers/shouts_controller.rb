@@ -1,7 +1,16 @@
 class ShoutsController < ApplicationController
   def index
-    shouts = Shout.all.order(params[:timestamps])
-    render locals: { shouts: shouts }
+
+    limit = (params[:limit] || 25).to_i
+    page  = (params[:page]  ||  0).to_i
+
+    if params[:user_id]
+      shouts = User.find(params[:user_id]).shouts
+    else
+      shouts = Shout.limit(limit).offset(page * limit).order(params[:timestamps])
+    end
+
+    render locals: { shouts: shouts, page: page , limit: limit }
   end
 
   def show

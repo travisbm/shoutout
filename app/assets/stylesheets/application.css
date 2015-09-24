@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: "microsoft yi baiti", Helvetica, sans-serif;
+}
+
+.banner ul {
+  margin: 0 auto 0 auto;
+  width: 100%;
+  list-style-type: none;
+}
+
+.banner ul li {
+  display: inline-block;
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none
+}
+
+a:hover {
+  color: blue;
+}
+
+a {
+  color: black;
+}
+
+li {
+  font-size: 18px;
+}
