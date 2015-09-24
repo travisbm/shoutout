@@ -11,7 +11,8 @@
   })
   [1, 3, 5].sample.times do
     user.shouts.build({
-      message: Faker::Lorem.paragraph[0..159]
+      message: Faker::Lorem.paragraph[0..159],
+      created_at: Faker::Time.backward(15, :evening)
     })
   end
   user.save!

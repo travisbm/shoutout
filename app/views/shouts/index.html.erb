@@ -1,2 +1,7 @@
-<h1>Shouts#index</h1>
-<p>Find me in app/views/shouts/index.html.erb</p>
+<h2>Shouts</h2>
+
+<ul>
+  <% shouts.each do |shout| %>
+   <li><%= shout.message %></li>
+  <% end %>
+</ul>
